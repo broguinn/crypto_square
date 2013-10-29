@@ -2,7 +2,7 @@ require 'rspec'
 require 'crypto_square'
 
 describe 'crypto_square' do
-  
+
 end
 
 describe 'strip' do
@@ -30,8 +30,8 @@ end
 describe 'build' do
   it "constructs a string from the split characters in groups of five, with spaces in between" do
     crypto = Crypto.new("Jim walks a fine line between sanity and yoga mastery")
-    crypto.strip # "jimwalksafinelinebetweensanityandyogamastery"
-    crypto.split # ["jimwalk", "safinel", "inebetw", "eensani", "tyandyo", "gamaste", "ry"]
+    crypto.strip
+    crypto.split
     crypto.build.should eq "jsiet grian eyaym fenam wibsn aanea dslet nytkl wioe"
   end
 end
@@ -53,7 +53,8 @@ end
 describe 'break' do
   it "breaks an encrypted string into a reordered array of words" do
     decrypto = Decrypto.new("imtgd vsfea rwerm ayoog oanou uiont nnlvt wttdd esaoh ghnss eoau")
-    decrypto.break.should eq ["imtgdvs", "fearwer", "mayoogo", "anouuio", "ntnnlvt", "wttddes", "aohghn", "sseoau"]
+    decrypto.break
+    decrypto.crypto_lines.should eq ["imtgdvs", "fearwer", "mayoogo", "anouuio", "ntnnlvt", "wttddes", "aohghn", "sseoau"]
   end
 end
 
@@ -64,8 +65,3 @@ describe 'decode' do
     decrypto.decode.should eq "ifmanwasmeanttostayonthegroundgodwouldhavegivenusroots"
   end
 end
-
-
-
-
-
